@@ -6,16 +6,16 @@
 #    By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/08 16:02:43 by bepoisso          #+#    #+#              #
-#    Updated: 2025/05/08 16:04:24 by bepoisso         ###   ########.fr        #
+#    Updated: 2025/05/09 16:08:22 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
-CXX = c++ -Wall -Wextra -Werror -std=c++98
+CXX = c++ -Wall -Wextra -Werror -std=c++98 -g
 
 SRCS =	main.cpp \
 		PhoneBook.cpp\
-		Contact.hpp
+		Contact.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
