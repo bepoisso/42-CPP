@@ -6,15 +6,16 @@
 #    By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/09 17:19:02 by bepoisso          #+#    #+#              #
-#    Updated: 2025/05/09 17:28:52 by bepoisso         ###   ########.fr        #
+#    Updated: 2025/05/09 18:12:19 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=Account
 CXX= c++ -Wall -Werror -Wextra -std=c++98 -g
 
-SRCS=	test.cpp\
+SRCS=	tests.cpp\
 		Account.cpp
+
 OBJS= $(SRCS:.cpp=.o)
 
 all: $(NAME)
