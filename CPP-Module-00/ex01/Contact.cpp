@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 15:48:19 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/12 13:22:19 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/12 13:29:55 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,35 +38,35 @@ void Contact::setInfos(int index) {
 label_first:
 	std::cout << "\tFirst name: ";
 	std::getline(std::cin, this->first_name);
-    if (std::cin.eof())
+	if (std::cin.eof())
 		std::cerr << std::endl << "error: ctrl+D detected" << std::endl, exit(1);
 	if (!std::cin || this->first_name == "")
 		goto label_first;
 label_last:
 	std::cout << "\tLast name: ";
 	std::getline(std::cin, this->last_name);
-    if (std::cin.eof())
+	if (std::cin.eof())
 		std::cerr << std::endl << "error: ctrl+D detected" << std::endl, exit(1);
 	if (!std::cin || this->last_name == "")
 		goto label_last;
 label_nick:
 	std::cout << "\tNickname: ";
 	std::getline(std::cin, this->nickname);
-    if (std::cin.eof())
+	if (std::cin.eof())
 		std::cerr << std::endl << "error: ctrl+D detected" << std::endl, exit(1);
 	if (!std::cin || this->nickname == "")
 		goto label_nick;
 label_phone:
 	std::cout << "\tPhone number: ";
 	std::getline(std::cin, this->phone);
-    if (std::cin.eof())
+	if (std::cin.eof())
 		std::cerr << std::endl << "error: ctrl+D detected" << std::endl, exit(1);
 	if (!std::cin || this->phone == "")
 		goto label_phone;
 label_secret:
 	std::cout << "\tDarkest secret: ";
 	std::getline(std::cin, this->secret);
-    if (std::cin.eof())
+	if (std::cin.eof())
 		std::cerr << std::endl << "error: ctrl+D detected" << std::endl, exit(1);
 	if (!std::cin || this->secret == "")
 		goto label_secret;
