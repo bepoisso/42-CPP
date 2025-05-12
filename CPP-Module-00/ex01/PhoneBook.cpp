@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: bepoisso <bepoisso@student.perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 15:48:09 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/09 16:58:18 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/12 13:22:10 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void	PhoneBook::displayContact(void) {
 label:
 	std::cout << "Enter a ID : ";
 	std::getline(std::cin, input);
+	if (std::cin.eof())
+		std::cerr << std::endl << "error: ctrl+D detected" << std::endl, exit(1);
 	if (input.length() != 1 || !std::isdigit(input[0]))
 	{
 		std::cerr << "error: ID" << std::endl;

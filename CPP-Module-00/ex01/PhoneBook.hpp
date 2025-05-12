@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: bepoisso <bepoisso@student.perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 15:48:14 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/09 17:05:10 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/12 13:15:17 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

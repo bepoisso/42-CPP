@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: bepoisso <bepoisso@student.perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 16:22:14 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/09 17:03:51 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/12 13:22:13 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
@@ -24,7 +25,9 @@ int main(void)
 	{
 		std::cout << "Enter a cmd : ";
 		std::getline(std::cin, str);
-		if (str == "ADD")
+		if (std::cin.eof())
+			return (std::cerr << std::endl << "error: Ctrl+D detected" << std::endl, 1);
+		else if (str == "ADD")
 			phonebook.addContact();
 		else if (str == "SEARCH")
 			phonebook.displayContact();
