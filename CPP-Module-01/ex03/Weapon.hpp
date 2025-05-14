@@ -3,26 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bepoisso <bepoisso@student.perpignan.fr    +#+  +:+       +#+        */
+/*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 12:59:37 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/14 13:13:50 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/14 15:45:14 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
+
+#include <iostream>
 
 class Weapon
 {
 private:
-	/* data */
+	std::string	_type;
+	
 public:
-	Weapon(/* args */);
+	std::string	getType() const;
+	void	setType(std::string newType);
+	Weapon(std::string newType);
 	~Weapon();
 };
-
-Weapon::Weapon(/* args */)
-{
-}
-
-Weapon::~Weapon()
-{
-}

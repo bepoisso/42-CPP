@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bepoisso <bepoisso@student.perpignan.fr    +#+  +:+       +#+         #
+#    By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 12:59:34 by bepoisso          #+#    #+#              #
-#    Updated: 2025/05/14 13:08:29 by bepoisso         ###   ########.fr        #
+#    Updated: 2025/05/14 15:18:16 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ $(NAME) : $(OBJS)
 clean :
 	rm -rf $(OBJS)
 
-fclean : clear
+fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all

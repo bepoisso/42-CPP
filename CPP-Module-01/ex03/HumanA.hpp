@@ -3,26 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bepoisso <bepoisso@student.perpignan.fr    +#+  +:+       +#+        */
+/*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 12:59:28 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/14 13:14:04 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/14 16:00:59 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
+
+#include <iostream>
+#include "Weapon.hpp"
 
 class HumanA
 {
 private:
-    /* data */
+	/* data */
 public:
-    HumanA(/* args */);
-    ~HumanA();
+	std::string name;
+	Weapon &weapon;
+
+	void attack(void) const;
+	HumanA(std::string name, Weapon &weapon);
+	~HumanA();
 };
-
-HumanA::HumanA(/* args */)
-{
-}
-
-HumanA::~HumanA()
-{
-}
