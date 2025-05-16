@@ -6,11 +6,11 @@
 #    By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 16:03:25 by bepoisso          #+#    #+#              #
-#    Updated: 2025/05/14 16:04:04 by bepoisso         ###   ########.fr        #
+#    Updated: 2025/05/16 15:22:50 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME="Sed is for losers"
+NAME=exec
 CXX= c++ -Wall -Wextra -Werror -std=c++98 -g
 
 SRCS =	main.cpp
