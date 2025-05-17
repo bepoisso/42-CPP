@@ -6,9 +6,11 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 17:08:05 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/17 17:55:06 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/17 18:16:35 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include <iostream>
 
