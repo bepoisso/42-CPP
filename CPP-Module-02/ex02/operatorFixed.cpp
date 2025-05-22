@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 19:33:17 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/22 20:06:50 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:20:25 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,24 +61,24 @@
 
 	/* OPERATOR: INCREMENT*/
 	Fixed& Fixed::operator++() {
-		this->setRawBits(this->getRawBits() + (1 << this._fractionalBits));
+		this->setRawBits(this->getRawBits() + (1 << this->_fractionalBits));
 		return *this;
 	}
 
 	Fixed Fixed::operator++(int) {
 		Fixed temp = *this;
-		this->setRawBits(this->getRawBits() + (1 << this._fractionalBits));
+		this->setRawBits(this->getRawBits() + (1 << this->_fractionalBits));
 		return temp;
 	}
 
 	Fixed& Fixed::operator--() {
-		this->setRawBits(this->getRawBits() - (1 << this._fractionalBits));
+		this->setRawBits(this->getRawBits() - (1 << this->_fractionalBits));
 		return *this;
 	}
 
 	Fixed Fixed::operator--(int) {
 		Fixed temp = *this;
-		this->setRawBits(this->getRawBits() - (1 << this._fractionalBits));
+		this->setRawBits(this->getRawBits() - (1 << this->_fractionalBits));
 		return temp;
 	}
 

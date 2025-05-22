@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 16:35:55 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/22 20:04:51 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:27:03 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,18 @@ public:
 	Fixed(int const n);
 	Fixed(float const f);
 
+	/* GET / SET */
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
 
+	/* FUNCTION */
 	float toFloat( void ) const;
 	int toInt( void ) const;
+	
+	static Fixed& min(Fixed& a, Fixed& b);
+	static Fixed const& min(Fixed const& a, Fixed const& b);
+	static Fixed& max(Fixed& a, Fixed& b);
+	static Fixed const& max(Fixed const& a, Fixed const& b);
 
 	/* OPERATOR: COMP*/
 	bool operator>(Fixed const &rhs) const;

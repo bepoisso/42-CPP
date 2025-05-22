@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 16:35:49 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/22 19:28:01 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:29:17 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,4 @@ int main( void ) {
 	10.1016
 	10.1016
 	$>
-	Si vous effectuez une division par 0, il est acceptable que le
-	programme crash.
-	11
 	*/
