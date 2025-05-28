@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:32:15 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 14:40:10 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 14:51:57 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,18 @@ std::ostream & operator<<(std::ostream & out, FragTrap const & value) {
 }
 
 /* Functions */
+
+void	FragTrap::attack(const std::string &target) {
+	if (!_hp)
+		std::cout << "FragTrap " << this->getName() << "try to attack but is dead" << std::endl;
+	else if (!_ep)
+		std::cout << "FragTrap " << this->getName() << " as not enought power to attack " << target << std::endl;
+	else
+	{
+		_ep--;
+		std::cout << "FragTrap " << _name << " attacks " << target << " causing " << _ad << " points of damage" << std::endl;
+	}
+}
 
 void	FragTrap::highFivesGuys(void) {
 	if (!_hp)

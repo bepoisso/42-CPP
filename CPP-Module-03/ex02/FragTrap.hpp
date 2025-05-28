@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:26:50 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 14:30:51 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 14:51:19 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
 
 	/* Functions */
 	void highFivesGuys(void);
+	void attack(const std::string &target);
 };
 
 std::ostream & operator<<(std::ostream & out, FragTrap const & value);
