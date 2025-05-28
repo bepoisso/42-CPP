@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 16:16:40 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 14:08:03 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 14:23:23 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ ClapTrap::ClapTrap(std::string newName) : _name(newName), _hp(10), _ep(10), _ad(
 
 ClapTrap::ClapTrap(const ClapTrap & src) : _name(src._name), _hp(src._hp), _ep(src._ep), _ad(src._ad) {
 	std::cout << "Copy constructor call" << std::endl;
+	*this = src;
 }
 
 ClapTrap::~ClapTrap(void) {
