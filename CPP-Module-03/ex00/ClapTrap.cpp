@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 16:16:40 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/26 18:26:48 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 14:20:10 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int			ClapTrap::getAtackDamage(void) const{
 
 void	ClapTrap::attack(const std::string& target) {
 	if (this->_hp <= 0)
+		std::cout << "ClapTrap " << this->getName() << "try to attack but is dead" << std::endl;
+	else if (this->_ep <= 0)
 		std::cout << "ClapTrap " << this->getName() << " as not enought power to attack " << target << std::endl;
 	else {
 		this->_ep--;
