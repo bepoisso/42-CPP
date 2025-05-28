@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:28:01 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 14:12:11 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 14:52:51 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ std::ostream & operator<<(std::ostream & out, ScavTrap const & value) {
 
 void	ScavTrap::attack(const std::string &target) {
 	if (!_hp)
-		std::cout << "StavTrap " << this->getName() << "try to attack but is dead" << std::endl;
+		std::cout << "ScavTrap " << this->getName() << "try to attack but is dead" << std::endl;
 	else if (!_ep)
-		std::cout << "StavTrap " << this->getName() << " as not enought power to attack " << target << std::endl;
+		std::cout << "ScavTrap " << this->getName() << " as not enought power to attack " << target << std::endl;
 	else
 	{
 		_ep--;
