@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 16:16:37 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 13:37:08 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 15:52:47 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	/* Canonical start */
 	ClapTrap(void); // Default Constructor
 	ClapTrap(const ClapTrap & src);
-	~ClapTrap(void);
+	virtual ~ClapTrap(void);
 	ClapTrap & operator=(const ClapTrap & rhs);
 	/* Canonical end */
 
