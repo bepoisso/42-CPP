@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:21:50 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 16:14:22 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 16:57:37 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Cat : public Animal
 {
 private:
-	const Brain* _brain;
+	Brain* _brain;
 
 public:
 	/* Canonical start */
@@ -27,6 +27,10 @@ public:
 	~Cat(void);
 	Cat & operator=(const Cat & rhs);
 	/* Canonical end */
+
+	/* Getter / Setter */
+	std::string	getIdeas(int index);
+	void		setIdeas(std::string newIdea, int index);
 
 };
 

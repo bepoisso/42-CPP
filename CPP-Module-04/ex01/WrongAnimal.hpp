@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/28 15:22:02 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 16:57:33 by bepoisso         ###   ########.fr       */
+/*   Created: 2025/05/28 15:11:16 by bepoisso          #+#    #+#             */
+/*   Updated: 2025/05/28 15:47:20 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
 
-class Dog : public Animal
+class WrongAnimal
 {
-private:
-	Brain* _brain;
+protected:
+	std::string _type;
 
 public:
 	/* Canonical start */
-	Dog(void); // Default Constructor
-	Dog(const Dog & src);
-	~Dog(void);
-	Dog & operator=(const Dog & rhs);
+	WrongAnimal(void); // Default Constructor
+	WrongAnimal(const WrongAnimal & src);
+	virtual ~WrongAnimal(void);
+	WrongAnimal & operator=(const WrongAnimal & rhs);
 	/* Canonical end */
 
+	WrongAnimal(std::string type);
+
 	/* Getter / Setter */
-	std::string	getIdeas(int index);
-	void		setIdeas(std::string newIdea, int index);
+	std::string	getType(void) const;
+	
+	/* Functions */
+
+	void	makeSound(void) const;
 
 };
-
-std::ostream & operator<<(std::ostream & out, Dog const & value);

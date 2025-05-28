@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:09:23 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 16:22:03 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 16:52:11 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,12 @@ Brain & Brain::operator=(const Brain & rhs) {
 		}
 	}
 	return *this;
+}
+
+std::string	Brain::getIdeas(int index) const {
+	return _ideas[index];
+}
+
+void		Brain::setIdeas(std::string newIdea, int index) {
+	_ideas[index] = newIdea;
 }

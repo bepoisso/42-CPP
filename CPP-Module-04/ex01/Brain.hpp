@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:09:28 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 16:13:05 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 16:52:16 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,7 @@ public:
 	Brain & operator=(const Brain & rhs);
 	/* Canonical end */
 
+	/* Getter / Setter */
+	std::string	getIdeas(int index) const;
+	void		setIdeas(std::string newIdea, int index);
 };

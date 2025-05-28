@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:21:55 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 16:22:59 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 17:01:06 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,16 @@ Dog::~Dog(void) {
 Dog & Dog::operator=(const Dog & rhs) {
 	if (this != &rhs) {
 		_type = rhs._type;
+		_brain = rhs._brain;
 	}
 	return *this;
 }
+
+std::string	Dog::getIdeas(int index) {
+	return this->_brain->getIdeas(index);
+}
+
+void		Dog::setIdeas(std::string newIdea, int index) {
+	this->_brain->setIdeas(newIdea, index);
+}
+

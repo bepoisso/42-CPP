@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/28 15:22:02 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 16:57:33 by bepoisso         ###   ########.fr       */
+/*   Created: 2025/05/28 15:21:50 by bepoisso          #+#    #+#             */
+/*   Updated: 2025/05/28 16:34:50 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog : public Animal
+class WrongCat : public WrongAnimal
 {
 private:
-	Brain* _brain;
+	/* data */
 
 public:
 	/* Canonical start */
-	Dog(void); // Default Constructor
-	Dog(const Dog & src);
-	~Dog(void);
-	Dog & operator=(const Dog & rhs);
+	WrongCat(void); // Default Constructor
+	WrongCat(const WrongCat & src);
+	~WrongCat(void);
+	WrongCat & operator=(const WrongCat & rhs);
 	/* Canonical end */
-
-	/* Getter / Setter */
-	std::string	getIdeas(int index);
-	void		setIdeas(std::string newIdea, int index);
 
 };
 
-std::ostream & operator<<(std::ostream & out, Dog const & value);
+std::ostream & operator<<(std::ostream & out, WrongCat const & value);

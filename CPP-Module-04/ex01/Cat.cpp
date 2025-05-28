@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:21:44 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 16:22:52 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 17:01:15 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,15 @@ Cat::~Cat(void) {
 Cat & Cat::operator=(const Cat & rhs) {
 	if (this != &rhs) {
 		_type = rhs._type;
+		_brain = rhs._brain;
 	}
 	return *this;
+}
+
+std::string	Cat::getIdeas(int index) {
+	return this->_brain->getIdeas(index);
+}
+
+void		Cat::setIdeas(std::string newIdea, int index) {
+	this->_brain->setIdeas(newIdea, index);
 }
