@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:09:23 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 16:52:11 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 17:47:10 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 #include <iostream>
 
 Brain::Brain(void) {
+	for (int i = 0; i < 100; i++) {
+		_ideas[i] = "";
+	}
 	std::cout << "Brain default constructor called" << std::endl;
 }
 
 Brain::Brain(const Brain & src) {
 	std::cout << "Brain copy constructor called" << std::endl;
+	for (int i = 0; i < 100; ++i)
+		_ideas[i] = src._ideas[i];
 	*this = src;
 }
 

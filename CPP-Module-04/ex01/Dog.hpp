@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:22:02 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/05/28 16:57:33 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/05/28 17:41:01 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	/* Canonical start */
 	Dog(void); // Default Constructor
 	Dog(const Dog & src);
-	~Dog(void);
+	virtual ~Dog(void);
 	Dog & operator=(const Dog & rhs);
 	/* Canonical end */
 
