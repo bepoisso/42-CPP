@@ -1,0 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/28 15:22:02 by bepoisso          #+#    #+#             */
+/*   Updated: 2025/05/28 16:17:59 by bepoisso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
+
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Dog : public Animal
+{
+private:
+	const Brain* _brain;
+
+public:
+	/* Canonical start */
+	Dog(void); // Default Constructor
+	Dog(const Dog & src);
+	~Dog(void);
+	Dog & operator=(const Dog & rhs);
+	/* Canonical end */
+
+};
+
+std::ostream & operator<<(std::ostream & out, Dog const & value);
