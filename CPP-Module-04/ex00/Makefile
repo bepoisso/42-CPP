@@ -6,14 +6,14 @@
 #    By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/28 15:10:04 by bepoisso          #+#    #+#              #
-#    Updated: 2025/05/28 15:36:11 by bepoisso         ###   ########.fr        #
+#    Updated: 2025/05/28 16:35:00 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=exec
 CXX= c++ -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
