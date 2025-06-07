@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bepoisso <bepoisso@student.42perpignan.fr> +#+  +:+       +#+        */
+/*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 14:35:43 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/05 17:01:10 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/07 12:16:09 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Character : public ICharacter
 private:
 	const std::string   _name;
     AMateria*           _inventory[4];
-    int                 _index; // a voir le systeme d'index pas sur 
+    bool                 _index[4];
 
 public:
 	Character(const std::string newName);

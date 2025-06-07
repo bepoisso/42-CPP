@@ -3,21 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bepoisso <bepoisso@student.42perpignan.fr> +#+  +:+       +#+        */
+/*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 14:35:40 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/05 17:00:43 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/07 12:21:47 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(const std::string newName) : _name(newName), _index(0) {
+Character::Character(const std::string newName) : _name(newName) {
+    for (int i = 0; i < 4; i++) {
+        _index[i] = false;
+    }
+    
 }
 
 Character::Character(const Character & src) : _name(src._name), _index(src._index) {
     for (int i = 0; i < 4; i++) {
-        // Fait la copie profonde
+        // Faire la copie profonde
     }
 }
 
@@ -34,20 +38,25 @@ std::string const & Character::getName() const {
 
 /* Methods */
 void Character::equip(AMateria* m) {
-    if (_index == 3)
+    int i = -1;
+    while (++i < 4)
+        if (_index[i] == false)
+            break ;
+    if (i == 4)
         return ;
-    _inventory[++_index] = m;
+    _inventory[i] = m;
+    _index[i] = true;
 }
 
 void Character::unequip(int idx) {
-    if (!_inventory[idx])
+    if (_index[idx] == false)
         return ;
     _inventory[idx] = 0;
-    
+    _index[idx] = false;
 }
 
 void Character::use(int idx, ICharacter& target) {
-    if (!_inventory[idx])
+    if (_index[idx] == false)
         return;
     _inventory[idx]->use(target);
 }
