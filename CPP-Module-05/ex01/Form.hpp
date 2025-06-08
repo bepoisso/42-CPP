@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bepoisso <bepoisso@student.perpignan.fr    +#+  +:+       +#+        */
+/*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 16:29:15 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/04 17:01:59 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/08 16:40:40 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -46,11 +48,11 @@ public:
 	/* Setter Getter */
 	const std::string	getName(void) const ;
 	bool 				getSigned(void) const ;
-	const int			getSignedGrade(void) const ;
-	const int			getExecuteGrade(void) const ;
+	int			getSignedGrade(void) const ;
+	int			getExecuteGrade(void) const ;
 
 	/* Functions */
 	bool beSigned(Bureaucrat & bur);
 };
 
-std::ostream operator<<(std::ostream os, const Form & src);
+std::ostream & operator<<(std::ostream & out, Form const & value);

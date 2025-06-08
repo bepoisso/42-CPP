@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bepoisso <bepoisso@student.perpignan.fr    +#+  +:+       +#+        */
+/*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 14:04:49 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/04 15:31:01 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/08 16:44:43 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,59 +17,64 @@ int main(void) {
 	Bureaucrat visitor;
 	Bureaucrat midleMan("Gilbert", 150/2);
 
+	Form high("Important", 1, 1);
+	Form mid("Midportant", 150/2, 150/2);
+	Form low("Lowportant", 150, 150);
+
+	std::cout << std::endl << "----------Bureaucrates----------" << std::endl;
 	std::cout << boss << visitor << midleMan;
+	std::cout << std::endl << "----------Forms----------" << std::endl;
+	std::cout << high << mid << low;
 	
-	std::cout << std::endl << "----------Try to promot a grade 1----------" << std::endl;
+	
+	std::cout << std::endl << std::endl << std::endl;
+	std::cout << std::endl << "----------Can't Sign Form----------" << std::endl;
 	try
 	{
-		std::cout << boss;
-		boss.promotGrade();
-		
+		visitor.signForm(high);
+		visitor.signForm(mid);
+		midleMan.signForm(high);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	
-	
-	std::cout << std::endl  << "----------Try to demote a grade 150----------" << std::endl;
 	try
 	{
-		std::cout << visitor;
-		visitor.demotGrade();
+		visitor.signForm(mid);
+		midleMan.signForm(high);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	
-	std::cout << std::endl  << "----------Try to promot a grade 75 to grade 0----------" << std::endl;
 	try
 	{
-		std::cout << midleMan;
-		for (int i = 0; i < 75; i++) {
-			midleMan.promotGrade();
-			std::cout << midleMan;
-		}
+		midleMan.signForm(high);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << std::endl  << "----------Try to demote a grade 1 to grade 151----------" << std::endl;
+	std::cout << std::endl << "----------Can Sign Form----------" << std::endl;
 	try
 	{
-		std::cout << midleMan;
-		for (int i = 0; i < 150; i++) {
-			midleMan.demotGrade();
-			std::cout << midleMan;
-		}
+		boss.signForm(high);
+		boss.signForm(mid);
+		boss.signForm(low);
+		midleMan.signForm(mid);
+		midleMan.signForm(low);
+		visitor.signForm(low);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
 
+	std::cout << std::endl << "----------Bureaucrates----------" << std::endl;
+	std::cout << boss << visitor << midleMan;
+	std::cout << std::endl << "----------Forms----------" << std::endl;
+	std::cout << high << mid << low;
 	return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bepoisso <bepoisso@student.perpignan.fr    +#+  +:+       +#+        */
+/*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 14:04:54 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/04 16:57:20 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/08 17:07:27 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,15 @@ void	Bureaucrat::demotGrade(void) {
 	if (_grade + 1 > 150)
 		throw gradeTooLowException();
 	_grade++;
+}
+
+void	Bureaucrat::signForm(Form & form) {
+	try {
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	} catch (const std::exception &e) {
+		std::cout << _name << " couldn't sign " << form.getName() << " because: " << e.what() << std::endl;
+	}
 }
 
 std::ostream & operator<<(std::ostream & out, Bureaucrat const & value) {

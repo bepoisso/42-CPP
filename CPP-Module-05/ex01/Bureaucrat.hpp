@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bepoisso <bepoisso@student.perpignan.fr    +#+  +:+       +#+        */
+/*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 14:04:52 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/04 15:14:17 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/08 16:42:27 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 #include <iostream>
 #include <exception>
+
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -46,6 +50,7 @@ public:
 	/* Function */
 	void	promotGrade(void);
 	void	demotGrade(void);
+	void	signForm(Form & form);
 };
 
 std::ostream & operator<<(std::ostream & out, Bureaucrat const & value);
