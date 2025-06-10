@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bepoisso <bepoisso@student.perpignan.fr    +#+  +:+       +#+         #
+#    By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 13:40:24 by bepoisso          #+#    #+#              #
-#    Updated: 2025/06/04 16:29:23 by bepoisso         ###   ########.fr        #
+#    Updated: 2025/06/10 16:11:25 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= exec
 CXX= c++ -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -30,6 +30,7 @@ clean :
 
 fclean : clean
 	rm -rf $(NAME)
+	rm -rf *_shrubbery
 
 re : fclean all
 

@@ -6,75 +6,44 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 14:04:49 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/08 16:44:43 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/10 16:11:06 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include <iostream>
+#include <string>
 
-int main(void) {
-	Bureaucrat boss("Boss", 1);
-	Bureaucrat visitor;
-	Bureaucrat midleMan("Gilbert", 150/2);
+int main() {
+	try {
+		Bureaucrat bob("Bob", 1);
+		Bureaucrat jim("Jim", 140);
+		Bureaucrat sam("Sam", 50);
 
-	Form high("Important", 1, 1);
-	Form mid("Midportant", 150/2, 150/2);
-	Form low("Lowportant", 150, 150);
+		ShrubberyCreationForm shrub("home");
+		RobotomyRequestForm robot("Marvin");
+		PresidentialPardonForm pardon("Ford");
 
-	std::cout << std::endl << "----------Bureaucrates----------" << std::endl;
-	std::cout << boss << visitor << midleMan;
-	std::cout << std::endl << "----------Forms----------" << std::endl;
-	std::cout << high << mid << low;
-	
-	
-	std::cout << std::endl << std::endl << std::endl;
-	std::cout << std::endl << "----------Can't Sign Form----------" << std::endl;
-	try
-	{
-		visitor.signForm(high);
-		visitor.signForm(mid);
-		midleMan.signForm(high);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		visitor.signForm(mid);
-		midleMan.signForm(high);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		midleMan.signForm(high);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
+		jim.signForm(shrub);
+		jim.executeForm(shrub);
+		bob.executeForm(shrub);
+		std::cout << std::endl;
+		sam.signForm(robot);
+		sam.executeForm(robot);
+		bob.executeForm(robot);
+		std::cout << std::endl;
+		bob.signForm(pardon);
+		bob.executeForm(pardon);
+		std::cout << std::endl;
+		ShrubberyCreationForm testFail("park");
+		bob.executeForm(testFail);
+
+	} catch (std::exception &e) {
+		std::cerr << "Caught exception: " << e.what() << std::endl;
 	}
 
-	std::cout << std::endl << "----------Can Sign Form----------" << std::endl;
-	try
-	{
-		boss.signForm(high);
-		boss.signForm(mid);
-		boss.signForm(low);
-		midleMan.signForm(mid);
-		midleMan.signForm(low);
-		visitor.signForm(low);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
-	std::cout << std::endl << "----------Bureaucrates----------" << std::endl;
-	std::cout << boss << visitor << midleMan;
-	std::cout << std::endl << "----------Forms----------" << std::endl;
-	std::cout << high << mid << low;
 	return 0;
 }
