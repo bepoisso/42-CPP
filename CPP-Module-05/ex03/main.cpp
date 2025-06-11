@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 14:04:49 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/11 14:25:26 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:26:40 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,3 @@ int main() {
 
 	return 0;
 }
-
-/* shrubbery creation
-Robotomy request
-presidential pardo */
