@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 11:08:44 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/11 13:32:49 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:24:40 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ AForm* Intern::makeForm(std::string formName, std::string formTarget) {
             std::cout << "Intern creates " << form->getName() << std::endl;
             break;
         default :
-            std::cout << "error: Intern can not create form. Form " << formName << " dose not exist" << std::endl;
+            std::cout << "error: Intern can not create form. Form \"" << formName << "\" dose not exist" << std::endl;
     }
     return form;
 }
