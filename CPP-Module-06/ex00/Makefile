@@ -6,14 +6,14 @@
 #    By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 13:40:24 by bepoisso          #+#    #+#              #
-#    Updated: 2025/06/11 15:39:28 by bepoisso         ###   ########.fr        #
+#    Updated: 2025/06/12 15:10:49 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= exec
+NAME= convert
 CXX= c++ -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS = main.cpp #More ... #
+SRCS = main.cpp ScalarConverter.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -30,7 +30,6 @@ clean :
 
 fclean : clean
 	rm -rf $(NAME)
-	rm -rf *_shrubbery
 
 re : fclean all
 
