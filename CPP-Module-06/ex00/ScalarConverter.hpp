@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 10:55:51 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/12 14:56:34 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/13 13:46:24 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <iomanip>
 
 class ScalarConverter {
 private:
@@ -33,7 +35,7 @@ private:
 
     static void fromChar(char c);
     static void fromInt(int i);
-    static void fromFloat(float f);
+    static void fromFloat(double f);
     static void fromDouble(double d);
 
     
