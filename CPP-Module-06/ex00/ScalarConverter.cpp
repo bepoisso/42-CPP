@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 10:55:48 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/13 14:46:29 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/16 12:09:39 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void ScalarConverter::convert(const std::string & literal) {
         fromChar(literal[0]);
     else if (isInt(literal))
         fromInt(std::atoi(literal.c_str()));
+    else if (isPseudoDouble(literal) || isPseudoFloat(literal))
+        fromPseudo(literal);
     else if (isFloat(literal))
         fromFloat(std::atof(literal.c_str()));
     else if (isDouble(literal))
@@ -70,9 +72,6 @@ bool ScalarConverter::isInt(const std::string & str) {
 }
 
 bool ScalarConverter::isFloat(const std::string & str) {
-     if (isPseudoFloat(str))
-        return true;
-    
     int len = str.length();
     if (len < 2 || str[len - 1] != 'f')
         return false;
@@ -101,9 +100,6 @@ bool ScalarConverter::isPseudoFloat(const std::string & str) {
 }
 
 bool ScalarConverter::isDouble(const std::string & str) {
-    if (isPseudoDouble(str))
-        return true;
-    
     bool point = false;
     int start = 0;
 
@@ -134,7 +130,7 @@ bool ScalarConverter::isPseudoDouble(const std::string & str) {
 void ScalarConverter::fromChar(char c) {
     std::cout << "----------From char call----------" << std::endl;
     if (c < 32 || c > 126)
-        std::cout << "char: Non displayable" << std::endl;
+        std::cout << "char: non displayable" << std::endl;
     else 
         std::cout << "char: " << c << std::endl;
     std::cout << "int: " << static_cast<int>(c) << std::endl;
@@ -148,13 +144,12 @@ void ScalarConverter::fromChar(char c) {
 void ScalarConverter::fromInt(int i) {
     std::cout << "----------From int call----------" << std::endl;
     if (i < 32 || i > 126)
-        std::cout << "char: Non displayable" << std::endl;
+        std::cout << "char: non displayable" << std::endl;
     else 
         std::cout << "char: " << static_cast<char>(i) << std::endl;
     std::cout << "int: " << i << std::endl;
     std::cout << "float: " << static_cast<float>(i)
-        << "." << (static_cast<float>(i) - static_cast<int>(i)) 
-        << "f" << std::endl;
+        << ".0f" << std::endl;
     std::cout << "double: " << static_cast<double>(i)
         << "." << (static_cast<double>(i) - static_cast<int>(i)) << std::endl;
 }
@@ -162,22 +157,54 @@ void ScalarConverter::fromInt(int i) {
 void ScalarConverter::fromFloat(double f) {
     std::cout << "----------From float call----------" << std::endl;
     if (f < 32 || f > 126)
-        std::cout << "char: Non displayable" << std::endl;
+        std::cout << "char: non displayable" << std::endl;
     else 
         std::cout << "char: " << static_cast<char>(f) << std::endl;
     std::cout << "int: " << static_cast<int>(f) << std::endl;
-    std::cout << "float: " << static_cast<float>(f) << "f" << std::endl;
-    std::cout << "double: " << f << std::endl;
+    std::cout << "float: " << static_cast<float>(f);
+    if (f - static_cast<int>(f) == 0)
+        std::cout << ".0";
+    std::cout << "f" << std::endl;
+    std::cout << "double: " << static_cast<double>(f);
+    if (static_cast<double>(f) - static_cast<int>(f) == 0)
+        std::cout << ".0";
+    std::cout << std::endl;
 }
 
 void ScalarConverter::fromDouble(double d) {
     std::cout << "----------From int double----------" << std::endl;
     if (d < 32 || d > 126)
-        std::cout << "char: Non displayable" << std::endl;
+        std::cout << "char: non displayable" << std::endl;
     else 
         std::cout << "char: " << static_cast<char>(d) << std::endl;
     std::cout << "int: " << static_cast<int>(d) << std::endl;
-    std::cout << std::fixed << std::setprecision(2);
-    std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
-    std::cout << "double: " << d << std::endl;
+    std::cout << "float: " << static_cast<float>(d);
+    if (static_cast<float>(d) - static_cast<int>(d) == 0)
+        std::cout << ".0";
+    std::cout << "f" << std::endl;
+    std::cout << "double: " << static_cast<double>(d);
+    if (d - static_cast<int>(d) == 0)
+        std::cout << ".0";
+    std::cout << std::endl;
+}
+
+void ScalarConverter::fromPseudo(const std::string & literal) {
+    if (literal == "nan" || literal == "nanf") {
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: nanf" << std::endl;
+        std::cout << "double: nan" << std::endl;
+    }
+    else if (literal == "+inf" || literal == "+inff") {
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: +inff" << std::endl;
+        std::cout << "double: +inf" << std::endl;
+    }
+    else if (literal == "-inf" || literal == "-inff") {
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: -inff" << std::endl;
+        std::cout << "double: -inf" << std::endl;
+    }
 }

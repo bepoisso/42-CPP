@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 10:55:51 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/13 13:46:24 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/16 11:33:26 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ private:
     static void fromInt(int i);
     static void fromFloat(double f);
     static void fromDouble(double d);
+    static void fromPseudo(const std::string & literal);
 
     
     
