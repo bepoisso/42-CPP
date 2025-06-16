@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 10:55:48 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/16 12:09:39 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/16 14:18:15 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@ void ScalarConverter::fromChar(char c) {
     if (c < 32 || c > 126)
         std::cout << "char: non displayable" << std::endl;
     else 
-        std::cout << "char: " << c << std::endl;
+        std::cout << "char: \'" << c << "\'" << std::endl;
     std::cout << "int: " << static_cast<int>(c) << std::endl;
     std::cout << "float: " << static_cast<float>(c)
         << "." << (static_cast<float>(c) - static_cast<int>(c)) 
@@ -146,7 +146,7 @@ void ScalarConverter::fromInt(int i) {
     if (i < 32 || i > 126)
         std::cout << "char: non displayable" << std::endl;
     else 
-        std::cout << "char: " << static_cast<char>(i) << std::endl;
+        std::cout << "char: \'" << static_cast<char>(i) << "\'" << std::endl;
     std::cout << "int: " << i << std::endl;
     std::cout << "float: " << static_cast<float>(i)
         << ".0f" << std::endl;
@@ -159,7 +159,7 @@ void ScalarConverter::fromFloat(double f) {
     if (f < 32 || f > 126)
         std::cout << "char: non displayable" << std::endl;
     else 
-        std::cout << "char: " << static_cast<char>(f) << std::endl;
+        std::cout << "char: '" << static_cast<char>(f) << "\'" << std::endl;
     std::cout << "int: " << static_cast<int>(f) << std::endl;
     std::cout << "float: " << static_cast<float>(f);
     if (f - static_cast<int>(f) == 0)
@@ -176,7 +176,7 @@ void ScalarConverter::fromDouble(double d) {
     if (d < 32 || d > 126)
         std::cout << "char: non displayable" << std::endl;
     else 
-        std::cout << "char: " << static_cast<char>(d) << std::endl;
+        std::cout << "char: \'" << static_cast<char>(d) << "\'" << std::endl;
     std::cout << "int: " << static_cast<int>(d) << std::endl;
     std::cout << "float: " << static_cast<float>(d);
     if (static_cast<float>(d) - static_cast<int>(d) == 0)
