@@ -6,11 +6,11 @@
 #    By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/16 12:12:55 by bepoisso          #+#    #+#              #
-#    Updated: 2025/06/16 12:13:08 by bepoisso         ###   ########.fr        #
+#    Updated: 2025/06/16 12:44:55 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = exec
+NAME = serialize
 CXX = c++ -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Serializer.cpp
