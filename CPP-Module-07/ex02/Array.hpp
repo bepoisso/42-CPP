@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 13:40:51 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/17 14:10:49 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/17 14:22:30 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <ctime>
+#include <cstdlib>
 
 template <typename T>
 class Array {
