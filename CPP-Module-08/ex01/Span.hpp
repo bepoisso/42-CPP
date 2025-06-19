@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:52:53 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/18 17:28:54 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/19 11:31:38 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ public:
     void addNumber(int n);
     int shortestSpan() const;
     int longestSpan() const;
-};
 
-template <typename InputIterator>
-void Span::addRange(InputIterator begin, InputIterator end) {
-    size_t distance = std::distance(begin, end);
-    if (_data.size() + distance > _size)
-        throw std::out_of_range("Not enough space in Span to add range");
-    _data.insert(_data.end(), begin, end);
-}
+    template <typename InputIterator>
+    void addRange(InputIterator begin, InputIterator end) {
+        size_t distance = std::distance(begin, end);
+        if (_data.size() + distance > _size)
+            throw std::out_of_range("Not enough space in Span to add range");
+        _data.insert(_data.end(), begin, end);
+    }
+};

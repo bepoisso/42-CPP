@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 14:52:33 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/18 17:25:14 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/19 11:37:39 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,11 @@ void testSubject() {
         sp.addNumber(17);
         sp.addNumber(9);
         sp.addNumber(11);
+        if (sp.shortestSpan() == 2)
+            std::cout << "\e[1;32m[PASS]\e[0m ";
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+        if (sp.shortestSpan() == 14)
+            std::cout << "\e[1;32m[PASS]\e[0m ";
         std::cout << "Longest span: " << sp.longestSpan() << std::endl;
     } catch (std::exception& e) {
         std::cerr << "\e[1;31m[ERROR]\e[0m " << e.what() << std::endl;
@@ -54,7 +58,7 @@ void testOverfill() {
         sp.addNumber(1);
         sp.addNumber(2);
         sp.addNumber(3);
-        sp.addNumber(4); // Doit throw
+        sp.addNumber(4);
         std::cout << "\e[1;31m[FAIL]\e[0m No exception thrown when overfilling span." << std::endl;
     } catch (const std::exception& e) {
         std::cout << "\e[1;32m[PASS]\e[0m Exception caught: " << e.what() << std::endl;
@@ -76,13 +80,12 @@ void testNotEnoughNumbers() {
 }
 
 void testBigSpan() {
-    std::cout << "***************Test Big Span (10 000+)***************" << std::endl;
+    std::cout << "***************Test Big Span random (10 000+)***************" << std::endl;
     try {
         Span sp = Span(10000);
         std::srand(std::time(NULL));
         for (int i = 0; i < 10000; ++i)
             sp.addNumber(std::rand());
-
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
         std::cout << "Longest span: " << sp.longestSpan() << std::endl;
     } catch (const std::exception& e) {
@@ -102,7 +105,11 @@ void testIteratorRange() {
         sp.addRange(vec.begin(), vec.end());
 
         std::cout << "\e[1;32m[PASS]\e[0m Range added successfully." << std::endl;
+        if (sp.shortestSpan() == 5)
+            std::cout << "\e[1;32m[PASS]\e[0m ";
         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+        if (sp.shortestSpan() == 495)
+            std::cout << "\e[1;32m[PASS]\e[0m ";
         std::cout << "Longest span: " << sp.longestSpan() << std::endl;
     } catch (const std::exception& e) {
         std::cerr << "\e[1;31m[FAIL]\e[0m Exception: " << e.what() << std::endl;
