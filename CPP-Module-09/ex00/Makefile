@@ -6,14 +6,14 @@
 #    By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/21 16:08:11 by bepoisso          #+#    #+#              #
-#    Updated: 2025/06/21 16:50:36 by bepoisso         ###   ########.fr        #
+#    Updated: 2025/06/21 21:27:48 by bepoisso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=btc
 CXX= c++ -Wall -Wextra -Werror -std=c++98 -g
 
-SRCS = main.cpp
+SRCS = main.cpp BitcoinExchange.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
