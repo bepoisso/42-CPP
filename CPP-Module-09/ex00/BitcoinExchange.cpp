@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 16:15:55 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/21 21:47:30 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/22 12:02:20 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void BitcoinExchange::isAvaliableLine(std::string & str) {
 	
 	for (size_t i = 0; i < temp.length(); i++) {
 		if (!isdigit(temp[i]) && temp[i] != '.')
-			throw std::invalid_argument("bad input (value) => " + str);
+			throw std::invalid_argument("bad input => " + str);
 	}
 	
 	double		nbr = std::atof(temp.c_str());
@@ -65,7 +65,7 @@ void BitcoinExchange::isAvaliableLine(std::string & str) {
 
 void BitcoinExchange::isDate(std::string & str) {
 	if (str.length() != 10 || str[4] != '-' || str[7] != '-')
-		throw std::invalid_argument("bad input (Len) => " + str);
+		throw std::invalid_argument("bad input => " + str);
 	
 	std::string year = str.substr(0, 4);
 	std::string month = str.substr(5, 2);
@@ -73,11 +73,11 @@ void BitcoinExchange::isDate(std::string & str) {
 
 	for (size_t i = 0; i < 4; i++)
 		if (!std::isdigit(year[i]))
-			throw std::invalid_argument("bad input (years) => " + str);
+			throw std::invalid_argument("bad input => " + str);
 		
 	for (size_t i = 0; i < 2; i++)
 		if (!isdigit(month[i]) || !isdigit(day[i]))
-			throw std::invalid_argument("bad input (date) => " + str);
+			throw std::invalid_argument("bad input => " + str);
 	
 	int	nYear = atoi(year.c_str());
 	int	nMonth = atoi(month.c_str());
@@ -89,16 +89,23 @@ void BitcoinExchange::isDate(std::string & str) {
 	};
 
 	if (nYear < 2000 || nYear > 2025)
-		throw std::out_of_range("bad input (years) => " + str);
+		throw std::out_of_range("bad input => " + str);
 	if (nMonth < 1 || nMonth > 12)
-		throw std::out_of_range("bad input (month) => " + str);
+		throw std::out_of_range("bad input => " + str);
 	if (nMonth == 2 && ((nYear % 4 == 0 && nYear % 100 != 0) || nYear % 400 == 0)) {
 		if (nDay < 1 || nDay > 29)
 			throw std::invalid_argument("bad input (day of bisextile year) => " + str);
 	}
 	else if (nDay < 1 || nDay > daysInMonth[nMonth - 1])
-		throw std::invalid_argument("bad input (day) => " + str);
+		throw std::invalid_argument("bad input => " + str);
 
+}
+
+void BitcoinExchange::search(std::string & date, double value) {
+	std::map<std::string, double>::iterator it = _lst.find(date);
+	if (it == _lst.end())
+		it = _lst.lower_bound(date);
+	std::cout << it->first << " => " << value << " = " << (it->second * value) << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &os, const BitcoinExchange &obj) {

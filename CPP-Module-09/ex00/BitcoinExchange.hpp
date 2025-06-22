@@ -6,7 +6,7 @@
 /*   By: bepoisso <bepoisso@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 16:15:49 by bepoisso          #+#    #+#             */
-/*   Updated: 2025/06/21 21:47:46 by bepoisso         ###   ########.fr       */
+/*   Updated: 2025/06/22 11:24:56 by bepoisso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,24 @@ class BitcoinExchange {
 private:
     // Attributes
     std::map<std::string, double> _lst;
-
-public:
+    
+    void isAvaliableLine(std::string &);
+    
+    public:
     // Canonical Form
     BitcoinExchange();
     ~BitcoinExchange();
     BitcoinExchange(const BitcoinExchange &other);
     BitcoinExchange &operator=(const BitcoinExchange &other);
-
-/* Operator */
-
-/* Getter / Setter */
-
-/* Methode */
+    
+    /* Operator */
+    
+    /* Getter / Setter */
+    
+    /* Methode */
     void addLine(std::string &);
-    void isAvaliableLine(std::string &);
     void isDate(std::string &);
+    void search(std::string &, double);
 
     friend std::ostream &operator<<(std::ostream &os, const BitcoinExchange &obj);
 };
